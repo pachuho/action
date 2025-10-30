@@ -3,7 +3,7 @@ name: Android CI Release Build
 on:
   push:
     branches:
-      - main
+      - 'main'
 
 jobs:
   build:
