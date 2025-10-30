@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: set up JDK 11
+    - name: set up JDK 17
       uses: gradle/actions/setup-gradle@v3
       with:
         java-version: '17'
@@ -34,4 +34,4 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build with Gradle
-      run: ./gradlew assembleDebug --no-daemon --stacktrace
+      run: ./gradlew assembleDebug --stacktrace
