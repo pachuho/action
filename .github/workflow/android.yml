@@ -1,0 +1,27 @@
+name: Android CI Release Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+#      - name: Store Gradle cache
+#        uses: actions/cache@v4
+#        with:
+#          path: ~/.gradle/caches
+#          key: $-gradle-$
+#          restore-keys: $-gradle-
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Build
+        run: ./gradlew assembleDebug
